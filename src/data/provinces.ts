@@ -1,6 +1,6 @@
 import type { Province } from '../types/address.ts';
 
-export const provinces: Province[] = [
+export const PROVINCES: Province[] = [
   {
     id: 1,
     name: 'Koshi Province',
