@@ -25,7 +25,8 @@
     "test": "node --import tsx --test tests/**/*.test.ts",
     "prepublishOnly": "npm test && npm run build",
     "docs": "typedoc",
-    "docs:watch": "typedoc --watch"
+    "docs:watch": "typedoc --watch",
+    "docs:clean": "rm -rf docs && typedoc"
   },
   "devDependencies": {
     "@types/node": "^25.5.2",

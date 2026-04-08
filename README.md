@@ -1,6 +1,22 @@
 # 🇳🇵 nepali-address
 The definitive, type-safe dataset and utility library for Nepal's administrative divisions. Built with TypeScript for modern Node.js environments.
 
+---
+<p align="center">
+    <a href="https://www.npmjs.com/package/nepali-address">
+        <img src="https://img.shields.io/npm/v/nepali-address?color=brightgreen&label=npm%20package" alt="npm version">
+    </a>
+    <a href="https://github.com/holasoymas/nepali-address/actions/workflows/publish.yml">
+        <img src="https://github.com/holasoymas/nepali-address/actions/workflows/publish.yml/badge.svg" alt="build status">
+    </a>
+    <a href="https://opensource.org/licenses/MIT">
+        <img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="license">
+    </a>
+    <img src="https://img.shields.io/npm/dm/nepali-address.svg" alt="downloads">
+</p>
+
+---
+
 ## 🚀 Installation
 
 Install the package using your preferred package manager:
@@ -18,6 +34,17 @@ yarn add nepali-address
 # bun
 bun add nepali-address
 ```
+
+---
+
+## Data Status
+- Provinces: ✅ Verified
+- Districts: ⚠ Under verification
+- Local Levels: ⚠ Under verification
+
+# ⚠ District & local-level data are under verification. Use at your own risk.
+
+---
 
 # 📖 Usage
 
@@ -47,4 +74,23 @@ const bagmatiDistricts = getDistrictsByProvince(3);
 // Find a district by Postcode
 const kathmandu = getDistrictByPostcode("44600");
 console.log(kathmandu.name); // Kathmandu
+```
+
+### LocalLevel
+Retrieve all local levels or find a specific one by its ID, `district_id`, `type` or more.
+
+```javascript
+import { getLocalLevels, getLocalLevelById, getLocalLevelsByType } from 'nepali-address';
+
+const districts = getLocalLevels();
+// → [{ id: 10101, name: 'Phaktanglung', ... }, ...]
+
+const district = getLocalLevelById(10101);
+// → { id: 10101, name: 'Phaktanglung', ... }
+
+const missing = getLocalLevelById(1999);
+// → undefined
+
+const district = getLocalLevelsByType('rular-municipality');
+// → [{ id: 10101, name: 'Phaktanglung', ... }, ...]
 ```

@@ -1,6 +1,6 @@
 import type { District } from '../types/address.ts';
 
-export const districts: District[] = [
+export const DISTRICTS: District[] = [
   //===========================================
   //=========== provinde no 1==================
   //===========================================

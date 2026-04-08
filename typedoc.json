@@ -2,6 +2,8 @@
   "$schema": "https://typedoc.org/schema.json",
   "entryPoints": ["src/index.ts"],
   "out": "docs",
+  "exclude": ["tests/**/*.test.ts", "node_modules"],
+  "skipErrorChecking": true,
   "name": "nepali-address",
   "readme": "README.md",
   "includeVersion": true,
