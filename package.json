@@ -18,7 +18,8 @@
   "files": [
     "dist",
     "README.md",
-    "LICENSE"
+    "LICENSE",
+    "nagarpalika.json"
   ],
   "scripts": {
     "build": "tsc",
