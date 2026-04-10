@@ -1,6 +1,6 @@
 {
   "name": "nepali-address",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "The definitive, type-safe dataset of Nepal's administrative divisions with English and Nepali support.",
   "keywords": [
     "nepal",
@@ -21,7 +21,7 @@
     "LICENSE"
   ],
   "scripts": {
-    "build": "tsc",
+    "build": "tsc -p tsconfig.build.json",
     "test": "node --import tsx --test tests/**/*.test.ts",
     "prepublishOnly": "npm test && npm run build",
     "docs": "typedoc",
