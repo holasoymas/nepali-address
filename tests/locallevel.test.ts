@@ -13,9 +13,10 @@ describe('LocalLevel API', () => {
     assert.ok(Array.isArray(result));
   });
 
-  test('should return all 753 local bodies', () => {
+  test('should return all 6753 local bodies', () => {
     const result = getLocalLevels();
-    assert.strictEqual(result.length, 137);
+    const sum = result.reduce((sum, item) => sum + item.total_wards, 0);
+    assert.strictEqual(sum, 6743);
   });
 
   test('should return LocalLevel with correct shape', () => {
@@ -32,7 +33,7 @@ describe('LocalLevel API', () => {
 
   test('should return Phaktanglung for ID 10101', () => {
     const ll = getLocalLevelById(10101);
-    assert.strictEqual(ll?.name, 'Phaktanglung');
+    assert.strictEqual(ll?.name, 'Phaktanlung Rural Municipality');
   });
 
   test('should return undefined for invalid ID', () => {
@@ -70,7 +71,9 @@ describe('LocalLevel API', () => {
     const allTaplejungLl = result.every((ll) => ll.district_id === 101);
     assert.strictEqual(allTaplejungLl, true);
 
-    const hasPhaktanglungBody = result.some((d) => d.name === 'Phaktanglung');
+    const hasPhaktanglungBody = result.some(
+      (d) => d.name === 'Phaktanlung Rural Municipality',
+    );
     assert.strictEqual(
       hasPhaktanglungBody,
       true,
