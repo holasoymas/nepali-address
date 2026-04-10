@@ -1,5 +1,5 @@
 import { DISTRICTS } from '../data/districts.js';
-import { ALL_LOCAL_LEVELS } from '../data/locallevel/index.js';
+import { LOCAL_LEVELS } from '../data/locallevel.js';;
 import { PROVINCES } from '../data/provinces.js';
 import { createLookupMap, createNameLookup, groupBy } from '../utils/maps.js';
 
@@ -61,20 +61,20 @@ export const districtsMapByProvince = groupBy(DISTRICTS, 'province_id');
  * A map of LocalLevel by their ID.
  * @internal
  */
-export const localLevelMap = createLookupMap(ALL_LOCAL_LEVELS, 'id');
+export const localLevelMap = createLookupMap(LOCAL_LEVELS, 'id');
 
 /**
  * A map of LocalLevel by their name(both nepali and english).
  * @internal
  */
-export const localLevelsMapByName = createNameLookup(ALL_LOCAL_LEVELS);
+export const localLevelsMapByName = createNameLookup(LOCAL_LEVELS);
 
 /**
  * A map of LocalLevel group by their district id.
  * @internal
  */
 export const localLevelsMapByDistrict = groupBy(
-  ALL_LOCAL_LEVELS,
+  LOCAL_LEVELS,
   'district_id',
 );
 
@@ -82,4 +82,4 @@ export const localLevelsMapByDistrict = groupBy(
  * A map of LocalLevel group by their type.
  * @internal
  */
-export const localLevelsMapByType = groupBy(ALL_LOCAL_LEVELS, 'type');
+export const localLevelsMapByType = groupBy(LOCAL_LEVELS, 'type');

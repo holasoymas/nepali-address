@@ -1,4 +1,4 @@
-import { ALL_LOCAL_LEVELS } from '../data/locallevel/index.js';
+import { LOCAL_LEVELS } from '../data/locallevel.js';
 import {
   localLevelMap,
   localLevelsMapByName,
@@ -24,7 +24,7 @@ import { normalize } from '../utils/helpers.js';
  * @category LocalLevel
  */
 export function getLocalLevels(): LocalLevel[] {
-  return ALL_LOCAL_LEVELS;
+  return LOCAL_LEVELS;
 }
 
 /**
