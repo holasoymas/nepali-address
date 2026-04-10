@@ -37,15 +37,6 @@ bun add nepali-address
 
 ---
 
-## Data Status
-- Provinces: ✅ Verified
-- Districts: ⚠ Under verification
-- Local Levels: ⚠ Under verification
-
-# ⚠ District & local-level data are under verification. Use at your own risk.
-
----
-
 # 📖 Usage
 
 ### Provinces
